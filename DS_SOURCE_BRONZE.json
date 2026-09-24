@@ -1,0 +1,60 @@
+{
+    "name": "DS_SOURCE_BRONZE",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureDataLakeStorage1",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "Bronze_to_sql"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "folderPath": "insert_files",
+                "fileSystem": "bronze"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "raceId",
+                "type": "String"
+            },
+            {
+                "name": "year",
+                "type": "String"
+            },
+            {
+                "name": "round",
+                "type": "String"
+            },
+            {
+                "name": "circuitId",
+                "type": "String"
+            },
+            {
+                "name": "name",
+                "type": "String"
+            },
+            {
+                "name": "date",
+                "type": "String"
+            },
+            {
+                "name": "time",
+                "type": "String"
+            },
+            {
+                "name": "url",
+                "type": "String"
+            }
+        ]
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}
